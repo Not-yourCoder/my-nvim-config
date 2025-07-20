@@ -105,6 +105,11 @@ require("catppuccin").setup({
 
 vim.cmd.colorscheme "catppuccin"
 
+-- Remove all occurances of the word
+vim.api.nvim_create_user_command("RemoveWord", function(opts)
+  vim.cmd(":%s/\\<" .. opts.args .. "\\>//g")
+end, { nargs = 1 })
+
 -- Keymaps
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader>r", ":GoRun<CR>", { desc = "Run Go file" })
