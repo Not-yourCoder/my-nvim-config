@@ -113,4 +113,6 @@ end, { nargs = 1 })
 -- Keymaps
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader>r", ":GoRun<CR>", { desc = "Run Go file" })
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true }) -- Alt + j
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true }) -- Alt + k
 
