@@ -56,6 +56,16 @@ require("lazy").setup({
     end,
   },
 
+  {
+  "nvim-telescope/telescope.nvim",
+  tag = '0.1.5',
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+    require('telescope').setup{}
+  end
+},
+
+
   -- Theme
   { "catppuccin/nvim", name = "catppuccin" },
 })
@@ -115,4 +125,8 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file ex
 vim.keymap.set("n", "<leader>r", ":GoRun<CR>", { desc = "Run Go file" })
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true }) -- Alt + j
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true }) -- Alt + k
+vim.keymap.set("n", "<leader>f", require("telescope.builtin").find_files, {})
+vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, {})
+vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, {})
+vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, {})
 
