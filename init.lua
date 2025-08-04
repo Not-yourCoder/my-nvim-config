@@ -65,6 +65,14 @@ require("lazy").setup({
   end
 },
 
+-- In your `~/.config/nvim/lua/plugins/comment.lua` or wherever you manage lazy plugins:
+{
+  'numToStr/Comment.nvim',
+  event = "VeryLazy",
+  config = function()
+    require('Comment').setup()
+  end
+},
 
   -- Theme
   { "catppuccin/nvim", name = "catppuccin" },
