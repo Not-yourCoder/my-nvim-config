@@ -19,3 +19,12 @@ map("n", "<leader>fh", function()
 end, { desc = "Help Tags" })
 
 map("n", "<leader>e", ":NvimTreeToggle<CR>", {desc = "Toggle Nvim tree"})
+
+
+map("n", "<leader>r", ":GoRun<CR>")
+map("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })-- In your keymaps.lua
+map("n", "<leader>dq", 'vi"d', { desc = "Delete inside double quotes" })
+map("n", "<leader>dQ", 'va"d', { desc = "Delete inside double quotes" })
+
+map("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+
