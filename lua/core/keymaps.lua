@@ -27,4 +27,14 @@ map("n", "<leader>dq", 'vi"d', { desc = "Delete inside double quotes" })
 map("n", "<leader>dQ", 'va"d', { desc = "Delete inside double quotes" })
 
 map("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+map("n", "<leader>j", "yyp", { desc = "Duplicate line below" })
+map("n", "<leader>k", "yyP", { desc = "Duplicate line above" })
+map("n", "gd", vim.lsp.buf.definition , { desc = "Go to definition" })
+map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+map("n", "gi", vim.lsp.buf.implementation , { desc = "Go to implementation" })
+-- Toggle terminal with <leader>t
+vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<CR>", { desc = "Toggle terminal" })
+
+-- You can also map terminal mode escape back to normal mode
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
